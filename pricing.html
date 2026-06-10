@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Calc Pro+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+
+body{
+background:#0b1020;
+color:#fff;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+background:
+radial-gradient(circle at top,#7c3aed 0%,#111827 45%,#020617 100%);
+}
+
+.hero h1{
+font-size:64px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+color:#cbd5e1;
+}
+
+.cards{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:28px;
+padding:30px;
+backdrop-filter:blur(20px);
+}
+
+.featured{
+border:2px solid #8b5cf6;
+transform:scale(1.03);
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+background:#8b5cf6;
+font-size:12px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.plan{
+font-size:24px;
+font-weight:700;
+}
+
+.price{
+font-size:60px;
+font-weight:800;
+margin:20px 0;
+}
+
+.price span{
+font-size:18px;
+color:#94a3b8;
+}
+
+ul{
+list-style:none;
+margin-top:20px;
+}
+
+li{
+padding:10px 0;
+color:#cbd5e1;
+}
+
+button{
+width:100%;
+height:58px;
+margin-top:25px;
+border:none;
+border-radius:16px;
+cursor:pointer;
+font-size:18px;
+font-weight:700;
+background:linear-gradient(135deg,#7c3aed,#a855f7);
+color:white;
+}
+
+.success{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.8);
+}
+
+.box{
+width:420px;
+background:white;
+color:#111;
+padding:35px;
+border-radius:24px;
+text-align:center;
+}
+
+.box h2{
+margin-bottom:12px;
+}
+
+.box p{
+color:#666;
+margin-bottom:20px;
+}
+
+.continue{
+background:#7c3aed;
+color:white;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Calc Pro+</h1>
+<p>Unlimited access to premium calculation features.</p>
+</section>
+
+<section class="cards">
+
+<div class="card">
+<div class="plan">One-Time Access</div>
+<div class="price">$9.9</div>
+
+<ul>
+<li>✓ Fast results</li>
+<li>✓ Instant access</li>
+<li>✓ Premium features</li>
+</ul>
+
+<button onclick="activate('One-Time Access')">
+Buy Now
+</button>
+</div>
+
+<div class="card featured">
+<div class="badge">MOST POPULAR</div>
+
+<div class="plan">Monthly Unlimited</div>
+<div class="price">$100 <span>/month</span></div>
+
+<ul>
+<li>✓ Unlimited calculations</li>
+<li>✓ Priority processing</li>
+<li>✓ Premium engine</li>
+<li>✓ All features included</li>
+</ul>
+
+<button onclick="activate('Monthly Unlimited')">
+Buy Now
+</button>
+</div>
+
+<div class="card">
+<div class="plan">Yearly Pro</div>
+<div class="price">$500 <span>/year</span></div>
+
+<ul>
+<li>✓ Best value</li>
+<li>✓ VIP access</li>
+<li>✓ Premium updates</li>
+<li>✓ Advanced features</li>
+</ul>
+
+<button onclick="activate('Yearly Pro')">
+Buy Now
+</button>
+</div>
+
+</section>
+
+<div class="success" id="success">
+<div class="box">
+
+<h2>🎉 Welcome to Calc Pro+</h2>
+
+<p id="msg"></p>
+
+<button class="continue" onclick="closeBox()">
+Continue
+</button>
+
+</div>
+</div>
+
+<script>
+function activate(plan){
+document.getElementById("msg").innerText =
+plan + " has been activated.";
+document.getElementById("success").style.display="flex";
+}
+
+function closeBox(){
+document.getElementById("success").style.display="none";
+}
+</script>
+
+</body>
+</html>
